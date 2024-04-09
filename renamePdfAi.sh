@@ -1,0 +1,2 @@
+#!binbash
+node index.js

@@ -1,0 +1,20 @@
+{
+  "name": "rename-pdf-ai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+	"rename": "node index.js"
+  },
+  "author": "Kenshi Chen",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "fs-extra": "^11.2.0",
+    "openai": "^4.33.0",
+    "pdf-poppler": "^0.2.1",
+    "pdf-text-reader": "^4.0.1",
+    "sharp": "^0.33.3",
+    "tesseract.js": "^5.0.5"
+  }
+}
