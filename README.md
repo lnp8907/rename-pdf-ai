@@ -23,7 +23,9 @@
 3. **執行程式：**
 
    - **Windows 使用者：** 雙擊執行 `renamePdfAi.bat` 檔案以啟動程式。
-   - **macOS/Linux 使用者：** 在終端中執行 `./renamePdfAi.sh` 以啟動程式。
+   - **macOS 使用者：** 雙擊執行或在終端中執行 `./renamePdfAi.sh` 以啟動程式。
+   - **Linux 使用者：** 在終端中執行 `./renamePdfAi.sh` 以啟動程式。
+   - **其他方式：** 在終端中執行 `npm run rename` 以啟動程式。
 
 4. **查看結果：** 程式將在處理完所有 PDF 文件後將結果保存在 `output/pdf` 文件夾中，並且會自動打開此文件夾以便您查看。
 
