@@ -44,8 +44,11 @@ const processPdf = async (filePath) => {
       .filter((filename) => filename.startsWith(opts.out_prefix))
       .map((filename) => path.join(opts.out_dir, filename));
 
+    // 在合並後的圖像上執行 OCR
+    await performOCR(imagesPaths[0], filePath);
+
     // 垂直合並圖像
-    await mergeImagesVertically(imagesPaths, outputImagePath, filePath);
+    // await mergeImagesVertically(imagesPaths, outputImagePath, filePath);
   } catch (error) {
     console.error("處理 PDF 時出錯:", error);
   }
@@ -118,7 +121,7 @@ const performOCR = async (imagePath, pdfPath) => {
 const queryOpenAI = async (text) => {
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-3.5-turbo-0125",
       messages: [
         {
           role: "system",
@@ -126,7 +129,7 @@ const queryOpenAI = async (text) => {
         },
         {
           role: "user",
-          content: `${text}`,
+          content: text,
         },
       ],
     });
