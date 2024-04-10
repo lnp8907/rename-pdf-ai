@@ -121,7 +121,7 @@ const performOCR = async (imagePath, pdfPath) => {
 const queryOpenAI = async (text) => {
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo-0125",
+      model: "gpt-3.5-turbo",
       messages: [
         {
           role: "system",
@@ -133,7 +133,7 @@ const queryOpenAI = async (text) => {
         },
       ],
     });
-    console.log(text);
+    // console.log(text);
     const newName = combineFields(
       JSON.parse(response.choices[0].message.content)
     );
